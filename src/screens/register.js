@@ -30,6 +30,8 @@ export default function Register() {
         password
       })
     })
+
+    //
     const data = await res.json()
 
 
@@ -70,7 +72,7 @@ export default function Register() {
             /> <br></br>
 
                
-        <label htmlFor="email">Email</label> <smallest className="text-muted form-text"><em>*</em></smallest><br></br>
+        <label htmlFor="email">Email</label> <small className="text-muted form-text"><em>*</em></small><br></br>
             <input
                 type="email"
                 id="email"
