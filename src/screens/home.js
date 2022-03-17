@@ -1,5 +1,4 @@
 import React from 'react';
-import { Counter } from '../features/counter/Counter';
 import Tina from './img/DOUBLE-T PRODUCTIONS.png'
 
 
