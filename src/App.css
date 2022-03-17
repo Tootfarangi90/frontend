@@ -98,3 +98,12 @@ textarea{
   width: 100%;
   height: 100%;
 }
+.errorMsg{
+  visibility: hidden;
+}
+
+.form-text{
+  color:red;
+  font-size: x-small;
+}
+
