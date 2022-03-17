@@ -6,7 +6,7 @@ export default function Profile() {
 
   return (
     <div className='hej'>
-<img className="yes" src={Yes}></img>
+<img className="yes" src={Yes} alt="yes"></img>
     </div>
   )
 
