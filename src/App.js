@@ -5,12 +5,13 @@ import { BrowserRouter as Router,
  Routes } from 'react-router-dom';
 
 import './App.css';
-
+import './script'
 //screens
 import Home from './screens/home';
 import Profile from './screens/profile';
 import Login from './screens/login';
 import Register from './screens/register';
+import FormReg from './screens/form';
  
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <li><a href="/">Home</a></li>
             <li> <Link to="/register" >Register</Link></li>
             <li> <Link to="/login">Login</Link></li>
+            <li> <Link to="/form">Form</Link></li>
           </ul>
 
         </nav>
@@ -41,6 +43,7 @@ function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />}></Route>
                   <Route path="/register" element={<Register />}></Route>
+                  <Route path="/form" element={<FormReg />}></Route>
                 </Routes>
 
             </div>

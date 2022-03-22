@@ -1,5 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+
+
 
 export default function Register() {
   
@@ -8,7 +11,7 @@ export default function Register() {
   const [lastname, setLastname] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+ 
 
  
   const firstnameChanged    = e => setFirstname(e.target.value)
@@ -16,6 +19,11 @@ export default function Register() {
   const passwordChanged     = e => setPassword(e.target.value)
   const emailChanged        = e => setEmail(e.target.value)
  
+  useEffect(()=>{
+  document.title = " | Register"
+
+  })
+
 
   async function registerUser(e) {
     e.preventDefault()
@@ -33,7 +41,7 @@ export default function Register() {
     })
     const data = await res.json()
     
-
+    console.log(data)
     if(data.status === 'ok') {
       alert('Welcome to the Double-T Productions gang!')
       window.location.href = '/login'
@@ -49,8 +57,8 @@ export default function Register() {
       <form onSubmit={registerUser}>
       
         <label htmlFor="firstname">First Name</label><br></br>
-            <input
-
+            <input 
+                
                 type      ="text"
                 id        ="firstname"
                 name      ="firstname"
@@ -62,7 +70,7 @@ export default function Register() {
         <br></br><small ><em>This field is required</em></small> <br></br>
 
         <label htmlFor="lastname">Last Name</label> <br></br>
-            <input
+            <input 
                 type      ="text"
                 id        ="lastname"
                 name      ="lastname"
@@ -74,26 +82,26 @@ export default function Register() {
                
         <label htmlFor="email">Email</label> <br></br>
             <input
-                type="email"
-                id="email"
-                name="email"
-                value={email.trim()}
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                onChange={emailChanged}
+                type      ="email"
+                id        ="email"
+                name      ="email"
+                value     ={email.trim()}
+                pattern   ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                onChange  ={emailChanged}
                 /> 
                 <br></br><small><em>Email is required</em></small> <br></br>
     
   
 
         <label htmlFor="password">Password</label> <br></br>
-            <input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                pattern=".{4,}"
-                placeholder='Enter 4 or more characters'
-                onChange={passwordChanged}
+            <input 
+                type        ="password"
+                id          ="password"
+                name        ="password"
+                value       ={password}
+                pattern     =".{4,}"
+                placeholder ='Enter 4 or more characters'
+                onChange    ={passwordChanged}
             /> <br></br><small><em>This field is required</em></small><br></br>
 
         <input type="submit" id="submitbtn" value="Register" />

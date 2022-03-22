@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const passwordChanged     = e => setPassword(e.target.value)
   const emailChanged        = e => setEmail(e.target.value)
- 
+  
+  // useEffect(()=>{
+  //   document.title = " | Login"
+  
+  //   })
 
   async function loginUser(e) {
     e.preventDefault()
@@ -20,11 +25,11 @@ export default function Login() {
       })
     })
     const data = await res.json()
+
     if(data.user){
       localStorage.setItem('token', data.user)
       window.location.href = '/profile'
-    }else{
-
+    } else {
       alert('please check your username and password')
     }
     console.log(data)
