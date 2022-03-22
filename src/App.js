@@ -3,6 +3,7 @@ import { BrowserRouter as Router,
  Route, 
  Link, 
  Routes } from 'react-router-dom';
+
 import './App.css';
 
 //screens
@@ -25,7 +26,7 @@ function App() {
 
           <ul>
             <li><a href="/">Home</a></li>
-            <li> <Link to="/register">Register</Link></li>
+            <li> <Link to="/register" >Register</Link></li>
             <li> <Link to="/login">Login</Link></li>
           </ul>
 
@@ -38,6 +39,7 @@ function App() {
                   <Route exact path="/" element={<Home />}></Route>
                   <Route path="/profile" element={<Profile />}></Route>
                   <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />}></Route>
                   <Route path="/register" element={<Register />}></Route>
                 </Routes>
 
